@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+import codingBackground from "../../public/Deep.png";
 import Image from "next/image";
-import codingBackground from "../../public/sage-friedman-HS5CLnQbCOc-unsplash.jpg";
 
 const dynamicWords = [
   "anxiety",
@@ -36,15 +36,15 @@ const dynamicWords = [
 const testimonials = [
   {
     name: "Martha P., Founder of a Tech Startup",
-    text: "Breakthrough Methods helped me reconnect with parts of myself I didn’t even realize I had — buried strengths, quiet desires, and a deeper wisdom that had been hidden under years of survival. It felt like remembering who I was before I started trying to be who the world expected. This work didn’t just shift how I show up — it reawakened the real me.",
+    text: "<strong>Breakthrough Methods™ helped me reconnect with parts of myself I didn’t even realize I had</strong> - buried strengths, quiet desires, and a deeper wisdom that had <em>been hidden under years of survival</em>. It felt like remembering who I was before I started trying to be who the world expected. This work didn’t just shift how I show up - <strong>it reawakened the real me</strong>.",
   },
   {
     name: "David M., Director of Strategy & Innovation",
-    text: "I spent years searching for answers outside myself — books, mentors, strategies — hoping something would finally click. But nothing truly did until Breakthrough Methods helped me access the clarity I’d been chasing, hear my own truth, and actually trust it. The answers were never out there — they were within me all along.",
+    text: "I spent years searching for answers outside myself - books, mentors, strategies - hoping something would finally click. But nothing truly did until <strong>Breakthrough Methods™ helped me access the clarity I’d been chasing, hear my own truth, and actually trust it</strong>. The answers were never out there - they were within me all along.",
   },
   {
     name: "Jorg V., Regional Director",
-    text: "Before Breakthrough Methods, I was stuck in a loop of overthinking and self-doubt — constantly second-guessing myself and struggling to move forward with confidence. This work helped me cut through the noise of my mind and drop into my body, where I could finally hear my truth and trust it. I began meeting each moment with clarity, courage, and choices I didn’t even know I had. Breakthrough Methods unlocked a new level of self-trust — and with it, opportunities I’d been blind to for years.",
+    text: "<strong>Before Breakthrough Methods™, I was stuck in a loop of overthinking and self-doubt</strong> - constantly second-guessing myself and struggling to move forward with confidence. <strong>This work helped me cut through the noise of my mind and drop into my body, where I could finally hear my truth and trust it</strong>. I began meeting each moment with clarity, courage, and choices I didn’t even know I had. Breakthrough Methods™ unlocked a new level of self-trust - and with it, opportunities I’d been blind to for years.",
   },
 ];
 
@@ -54,19 +54,14 @@ export default function HeroSection() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-  // Typewriter effect
   useEffect(() => {
     const currentWord = dynamicWords[wordIndex];
     const speed = isDeleting ? 50 : 100;
 
     const timeout = setTimeout(() => {
-      setDisplayText((prev) => {
-        if (isDeleting) {
-          return prev.slice(0, -1);
-        } else {
-          return currentWord.slice(0, prev.length + 1);
-        }
-      });
+      setDisplayText((prev) =>
+        isDeleting ? prev.slice(0, -1) : currentWord.slice(0, prev.length + 1)
+      );
 
       if (!isDeleting && displayText === currentWord) {
         setTimeout(() => setIsDeleting(true), 800);
@@ -79,59 +74,54 @@ export default function HeroSection() {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, wordIndex]);
 
-  // Auto-rotate testimonials every 4 seconds
   useEffect(() => {
     const testimonialInterval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-
+    }, 30000);
     return () => clearInterval(testimonialInterval);
   }, []);
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={codingBackground}
-          alt="Background"
-          fill
-          style={{ objectFit: "cover" }}
-          priority
-        />
-      </div>
+    <div className="relative w-full h-screen flex flex-col justify-center overflow-hidden">
+      <Image
+        src={codingBackground}
+        alt="Background"
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#004859]/80 to-transparent z-10"></div>
 
-
-      {/* Main Content */}
-      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-12 w-full">
-        {/* Left Section */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-            Break free from <br />
-            <span className="text-yellow-400 border-r-2 border-yellow-400 pr-1">
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-4 py-12 sm:py-16 w-full">
+        <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert mb-6 md:mb-0">
+          <h1 className="text-3xl text-white sm:text-4xl md:text-6xl font-extrabold mb-12">
+            Set yourself free from <br />
+            <span className="text-[#00DBFF] border-r-2 border-[#00DBFF] pr-1">
               {displayText}
             </span>
           </h1>
-          <p className="text-gray-200 text-lg mb-6">
-            Breakthrough Methods is a proven transformational system that clears
+          <p className="text-base text-white sm:text-lg mb-12">
+            Breakthrough Methods™ is a proven transformational system that clears
             the internal resistance blocking you from becoming who you're meant
             to be, doing what you're here to do, and having what you truly want
             and desire.
           </p>
-          <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
-            Join the waitlist
-          </button>
+          <button
+  onClick={() => {
+    const section = document.getElementById('email');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+  className="bg-[#00DBFF] text-[#004859] font-semibold px-6 py-3 rounded-full hover:bg-[#0092BF] transition w-full sm:w-auto"
+>
+  Join the waitlist
+</button>
         </div>
 
-        {/* Right Section (Testimonials) */}
-        <div className="md:w-1/2  mt-12 md:mt-0 md:pl-48 text-center md:text-left">
-          <div className="flex justify-center md:justify-start space-x-2 mb-4">
-            {/* You can add testimonial avatars here if needed */}
-          </div>
-          <p className="text-white italic max-w-md transition-opacity duration-500">
-            “{testimonials[activeTestimonial].text}”
-          </p>
-          <p className="text-gray-300 mt-2">
+        <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert max-w-md">
+          <div className="italic transition-opacity duration-500 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: `“${testimonials[activeTestimonial].text}”` }} />
+          <p className="mt-2 text-sm sm:text-base">
             – {testimonials[activeTestimonial].name}
           </p>
           <div className="flex justify-center md:justify-start space-x-2 mt-4">
@@ -139,7 +129,7 @@ export default function HeroSection() {
               <button
                 key={idx}
                 className={`h-2 w-2 rounded-full ${
-                  idx === activeTestimonial ? "bg-white" : "bg-yellow-500"
+                  idx === activeTestimonial ? "bg-white" : "bg-[#00DBFF]"
                 }`}
                 onClick={() => setActiveTestimonial(idx)}
               ></button>
