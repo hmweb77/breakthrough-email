@@ -2,18 +2,31 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import axios from 'axios';
 
 export default function WaitlistForm() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    try {
+      const res = await axios.post('/api/subscribe', formData);
+      if (res.status === 200) {
+        setSubmitted(true);
+      } else {
+        setError('There was an issue subscribing. Please try again.');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('There was an error connecting to the server.');
+    }
 
     const section = document.querySelector('#email');
     if (section) {
@@ -24,17 +37,17 @@ export default function WaitlistForm() {
   return (
     <div id="email" className="relative w-full flex flex-col justify-center items-center px-6 sm:px-10 md:px-16 py-16 bg-[#004859] mx-auto prose prose-invert ">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center text-white leading-tight">
-  Be the First to Know 
-  <span className="hidden md:inline"><br /></span> {/* show break from small screens upward */}
-  when Breakthrough Methods™ Launches
-</h2>
+        Be the First to Know
+        <span className="hidden md:inline"><br /></span>
+        when Breakthrough Methods™ Launches
+      </h2>
 
       <p className="text-base sm:text-lg mb-10 text-center text-white max-w-3xl">
         Join the waitlist for early access, exclusive content, launch bonuses, and insider insights
-        to  <span className="font-extrabold"> start your breakthrough before the doors even open!</span>
+        to <span className="font-extrabold">start your breakthrough before the doors even open!</span>
       </p>
       <p className="text-base sm:text-lg mb-12 text-center text-white max-w-3xl">
-        Drop your name and email below + follow us on socials to<span className="font-extrabold"> be the first to know</span> and experience
+        Drop your name and email below + follow us on socials to <span className="font-extrabold">be the first to know</span> and experience
         the launch journey.
       </p>
 
@@ -64,6 +77,7 @@ export default function WaitlistForm() {
           >
             Join the waitlist
           </button>
+          {error && <p className="text-red-300 mt-2 text-sm">{error}</p>}
         </form>
       ) : (
         <div className="mt-10 p-6 bg-[#006b74] rounded-lg shadow text-center max-w-2xl">
@@ -86,7 +100,6 @@ export default function WaitlistForm() {
         <Link href="https://www.facebook.com/breakthroughmethods" target="_blank" aria-label="Facebook" className="text-white hover:text-[#00DBFF] text-2xl">
           <FaFacebook />
         </Link>
-      
       </div>
     </div>
   );
