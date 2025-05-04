@@ -80,7 +80,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full  overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -99,15 +99,15 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#004859]/80 to-transparent z-10"></div>
 
       {/* Foreground Content */}
-      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 min-h-screen">
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:min-h-screen">
         <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert mb-8 md:mb-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white my-12 sm:mb-16">
             Set yourself free from <br />
             <span className="text-[#00BAE5] border-r-2 border-[#00DBFF] pr-1">
               {displayText}
             </span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-white mb-6 sm:mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-white mb-12 sm:mb-16">
             <span className="font-extrabold italic">
               Breakthrough Methods™ is a proven transformational system that
               clears the internal
@@ -122,7 +122,7 @@ export default function HeroSection() {
                 section.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="bg-[#00BAE5] text-[#004859] font-semibold px-6 py-3 rounded-lg hover:bg-[#0092BF] transition w-full sm:w-auto"
+            className="bg-[#00BAE5] text-[#004859] font-semibold mb-4 px-6 py-3 rounded-lg hover:bg-[#0092BF] transition w-full sm:w-auto"
           >
             Join the waitlist
           </button>
