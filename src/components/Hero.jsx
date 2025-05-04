@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import codingBackground from "../../public/Deep.png";
-import Image from "next/image";
 
 const dynamicWords = [
   "anxiety",
@@ -82,46 +80,62 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen flex flex-col justify-center overflow-hidden">
-      <Image
-        src={codingBackground}
-        alt="Background"
-        fill
-        className="object-cover"
-        priority
-      />
+    <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/vecteezy_under-water.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#004859]/80 to-transparent z-10"></div>
 
-      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-4 py-12 sm:py-16 w-full">
-        <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert mb-6 md:mb-0">
-          <h1 className="text-3xl text-white sm:text-4xl md:text-6xl font-extrabold mb-12">
+      {/* Foreground Content */}
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 min-h-screen">
+        <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert mb-8 md:mb-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 sm:mb-8">
             Set yourself free from <br />
-            <span className="text-[#00DBFF] border-r-2 border-[#00DBFF] pr-1">
+            <span className="text-[#00BAE5] border-r-2 border-[#00DBFF] pr-1">
               {displayText}
             </span>
           </h1>
-          <p className="text-base text-white sm:text-lg mb-12">
-            Breakthrough Methods™ is a proven transformational system that clears
-            the internal resistance blocking you from becoming who you're meant
-            to be, doing what you're here to do, and having what you truly want
-            and desire.
+          <p className="text-sm sm:text-base md:text-lg text-white mb-6 sm:mb-8">
+            <span className="font-extrabold italic">
+              Breakthrough Methods™ is a proven transformational system that
+              clears the internal
+            </span>{" "}
+            resistance blocking you from becoming who you're meant to be, doing
+            what you're here to do, and having what you truly want and desire.
           </p>
           <button
-  onClick={() => {
-    const section = document.getElementById('email');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}
-  className="bg-[#00DBFF] text-[#004859] font-semibold px-6 py-3 rounded-full hover:bg-[#0092BF] transition w-full sm:w-auto"
->
-  Join the waitlist
-</button>
+            onClick={() => {
+              const section = document.getElementById("email");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-[#00BAE5] text-[#004859] font-semibold px-6 py-3 rounded-lg hover:bg-[#0092BF] transition w-full sm:w-auto"
+          >
+            Join the waitlist
+          </button>
         </div>
 
         <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert max-w-md">
-          <div className="italic transition-opacity duration-500 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: `“${testimonials[activeTestimonial].text}”` }} />
-          <p className="mt-2 text-sm sm:text-base">
+          <div
+            className="italic transition-opacity text-white duration-500 text-sm sm:text-base"
+            dangerouslySetInnerHTML={{
+              __html: `“${testimonials[activeTestimonial].text}”`,
+            }}
+          />
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-white">
             – {testimonials[activeTestimonial].name}
           </p>
           <div className="flex justify-center md:justify-start space-x-2 mt-4">

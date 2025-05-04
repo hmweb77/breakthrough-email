@@ -24,14 +24,14 @@ export default function WaitlistForm() {
   return (
     <div id="email" className="relative w-full flex flex-col justify-center items-center px-6 sm:px-10 md:px-16 py-16 bg-[#004859] mx-auto prose prose-invert ">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center text-white leading-tight">
-        Be the First to Know When Breakthrough Methods™ Launches
+        Be the First to Know <br/> when Breakthrough Methods™ Launches
       </h2>
       <p className="text-base sm:text-lg mb-10 text-center text-white max-w-3xl">
         Join the waitlist for early access, exclusive content, launch bonuses, and insider insights
-        to start your breakthrough before the doors even open!
+        to  <span className="font-extrabold"> start your breakthrough before the doors even open!</span>
       </p>
       <p className="text-base sm:text-lg mb-12 text-center text-white max-w-3xl">
-        Drop your name and email below + follow us on socials to be the first to know and experience
+        Drop your name and email below + follow us on socials to<span className="font-extrabold"> be the first to know</span> and experience
         the launch journey.
       </p>
 
@@ -57,7 +57,7 @@ export default function WaitlistForm() {
           />
           <button
             type="submit"
-            className="w-full bg-[#00DBFF] text-[#004859] font-semibold py-4 rounded-lg hover:bg-[#0092BF] transition text-base"
+            className="w-full bg-[#00BAE5] text-[#004859] font-semibold py-4 rounded-lg hover:bg-[#0092BF] transition text-base"
           >
             Join the waitlist
           </button>
@@ -77,12 +77,13 @@ export default function WaitlistForm() {
         <Link href="https://www.instagram.com/breakthroughmethods" target="_blank" aria-label="Instagram" className="text-white hover:text-[#00DBFF] text-2xl">
           <FaInstagram />
         </Link>
-        <Link href="https://www.facebook.com/breakthroughmethods" target="_blank" aria-label="Facebook" className="text-white hover:text-[#00DBFF] text-2xl">
-          <FaFacebook />
-        </Link>
         <Link href="https://www.linkedin.com/company/breakthroughmethods/" target="_blank" aria-label="LinkedIn" className="text-white hover:text-[#00DBFF] text-2xl">
           <FaLinkedin />
         </Link>
+        <Link href="https://www.facebook.com/breakthroughmethods" target="_blank" aria-label="Facebook" className="text-white hover:text-[#00DBFF] text-2xl">
+          <FaFacebook />
+        </Link>
+      
       </div>
     </div>
   );
