@@ -24,8 +24,11 @@ export default function WaitlistForm() {
   return (
     <div id="email" className="relative w-full flex flex-col justify-center items-center px-6 sm:px-10 md:px-16 py-16 bg-[#004859] mx-auto prose prose-invert ">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-center text-white leading-tight">
-        Be the First to Know <br/> when Breakthrough Methods™ Launches
-      </h2>
+  Be the First to Know 
+  <span className="hidden md:inline"><br /></span> {/* show break from small screens upward */}
+  when Breakthrough Methods™ Launches
+</h2>
+
       <p className="text-base sm:text-lg mb-10 text-center text-white max-w-3xl">
         Join the waitlist for early access, exclusive content, launch bonuses, and insider insights
         to  <span className="font-extrabold"> start your breakthrough before the doors even open!</span>
