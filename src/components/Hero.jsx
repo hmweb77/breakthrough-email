@@ -90,7 +90,7 @@ export default function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/vecteezy_under-water.mp4" type="video/mp4" />
+          <source src="/underwater_converted.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -130,7 +130,7 @@ export default function HeroSection() {
 
         <div className="w-full md:w-1/2 text-center md:text-left prose prose-invert max-w-md">
           <div
-            className="italic transition-opacity text-white duration-500 text-sm sm:text-base"
+            className="italic transition-opacity text-white duration-500 text-base sm:text-xl"
             dangerouslySetInnerHTML={{
               __html: `“${testimonials[activeTestimonial].text}”`,
             }}
