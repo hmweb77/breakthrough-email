@@ -44,10 +44,10 @@ export default function WaitlistForm() {
 
       <p className="text-base sm:text-lg mb-10 text-center text-white max-w-3xl">
         Join the waitlist for early access, exclusive content, launch bonuses, and insider insights
-        to <span className="font-extrabold">start your breakthrough before the doors even open!</span>
+        to start your breakthrough before the doors even open!
       </p>
       <p className="text-base sm:text-lg mb-12 text-center text-white max-w-3xl">
-        Drop your name and email below + follow us on socials to <span className="font-extrabold">be the first to know</span> and experience
+        Drop your name and email below + follow us on socials to be the first to know and experience
         the launch journey.
       </p>
 

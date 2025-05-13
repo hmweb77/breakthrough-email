@@ -34,15 +34,15 @@ const dynamicWords = [
 const testimonials = [
   {
     name: "Martha P., Founder of a Tech Startup",
-    text: "<strong>Breakthrough Methods™ helped me reconnect with parts of myself I didn’t even realize I had</strong> - buried strengths, quiet desires, and a deeper wisdom that had <em>been hidden under years of survival</em>. It felt like remembering who I was before I started trying to be who the world expected. This work didn’t just shift how I show up - <strong>it reawakened the real me</strong>.",
+    text: "Breakthrough Methods™ helped me reconnect with parts of myself I didn’t even realize I had - buried strengths, quiet desires, and a deeper wisdom that had <em>been hidden under years of survival</em>. It felt like remembering who I was before I started trying to be who the world expected. This work didn’t just shift how I show up - it reawakened the real me.",
   },
   {
     name: "David M., Director of Strategy & Innovation",
-    text: "I spent years searching for answers outside myself - books, mentors, strategies - hoping something would finally click. But nothing truly did until <strong>Breakthrough Methods™ helped me access the clarity I’d been chasing, hear my own truth, and actually trust it</strong>. The answers were never out there - they were within me all along.",
+    text: "I spent years searching for answers outside myself - books, mentors, strategies - hoping something would finally click. But nothing truly did until Breakthrough Methods™ helped me access the clarity I’d been chasing, hear my own truth, and actually trust it. The answers were never out there - they were within me all along.",
   },
   {
     name: "Jorg V., Regional Director",
-    text: "<strong>Before Breakthrough Methods™, I was stuck in a loop of overthinking and self-doubt</strong> - constantly second-guessing myself and struggling to move forward with confidence. <strong>This work helped me cut through the noise of my mind and drop into my body, where I could finally hear my truth and trust it</strong>. I began meeting each moment with clarity, courage, and choices I didn’t even know I had. Breakthrough Methods™ unlocked a new level of self-trust - and with it, opportunities I’d been blind to for years.",
+    text: "Before Breakthrough Methods™, I was stuck in a loop of overthinking and self-doubt - constantly second-guessing myself and struggling to move forward with confidence. <strong>This work helped me cut through the noise of my mind and drop into my body, where I could finally hear my truth and trust it</strong>. I began meeting each moment with clarity, courage, and choices I didn’t even know I had. Breakthrough Methods™ unlocked a new level of self-trust - and with it, opportunities I’d been blind to for years.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-white mb-12 sm:mb-16">
-            <span className="font-extrabold italic">
+            <span className="italic">
               Breakthrough Methods™ is a proven transformational system that
               clears the internal
             </span>{" "}
