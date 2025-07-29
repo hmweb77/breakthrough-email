@@ -1,7 +1,8 @@
 'use client';
 import Head from 'next/head';
-import HeroSection from '../components/Hero';
+
 import WaitlistForm from '../components/EmailList.jsx';
+import NewHeroSection from '@/components/NewHero';
 
 
 export default function HomePage() {
@@ -22,7 +23,7 @@ export default function HomePage() {
         />
       </Head>
     <main>
-      <HeroSection />
+      <NewHeroSection></NewHeroSection>
       <WaitlistForm/>
     </main>
     </>
